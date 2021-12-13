@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const CustomButton = styled.button`
   width: 50px;
@@ -24,7 +24,7 @@ const CustomButton = styled.button`
       &:active{
         background: #cccccc;
       }
-      `
+      `;
     } else {
       return `
       background-color: #bdbdbd;
@@ -34,15 +34,15 @@ const CustomButton = styled.button`
       &:active {
         background: #8a8a8a;
       }
-      `
+      `;
     }
   }};
-`
+`;
 
 const Button = ({ type, text, onClick = () => {} }) => (
   <CustomButton type={type} onClick={onClick}>
     {text}
   </CustomButton>
-)
+);
 
-export default Button
+export default Button;

@@ -16,13 +16,6 @@ const Li = styled.li`
   button {
     margin-right: 10px;
   }
-  ul:nth-child(1) {
-    margin-left: 10px;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
 `;
 const CheckInput = styled.input`
   width: 20px;
