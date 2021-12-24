@@ -256,12 +256,12 @@ img {
 .step-sub-li {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 .step-sub-li > p {
-  word-wrap: break-word;
+  word-break: break-all;
 }
 .step-sub-img {
   z-index: 100;
