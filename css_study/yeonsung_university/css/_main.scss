@@ -1,0 +1,425 @@
+.main {
+  &-bg-container {
+    height: 580px;
+    width: 100%;
+    & > .main-bg {
+      width: inherit;
+      height: inherit;
+      transition-property: all;
+      transition-duration: 500ms;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      &.main-bgimg1 {
+        background: url('/img/main/banner1.png') no-repeat center top;
+      }
+      &.main-bgimg2 {
+        // display: none;
+        background: url('/img/main/banner2.png') no-repeat center top;
+      }
+      &.main-bgimg3 {
+        // display: none;
+        background: url('/img/main/banner3.png') no-repeat center top;
+      }
+
+      & > .sub-bg-container {
+        max-width: $maxWidth;
+        height: inherit;
+        margin: $marginCenter;
+        & > .sub-location {
+          @include flex-form(center, center, nowrap);
+          width: fit-content;
+          height: 30px;
+          position: absolute;
+          top: 20px;
+          left: 10px;
+          padding: 10px 15px;
+          background-color: rgba(0, 0, 0, 0.3);
+          border-radius: 5px;
+
+          & > .sub-location-bgimg {
+            display: inline-block;
+            width: 15px;
+            height: 20px;
+            margin: 4px 5px 0 0;
+            background: url('/img/main/icon_place.svg') no-repeat center top;
+          }
+          & > .sub-location-txt {
+            font-size: 14px;
+            color: $WHITE_COLOR;
+          }
+        }
+
+        & > span {
+          position: absolute;
+          display: block;
+          width: 500px;
+          height: 300px;
+          top: 13%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        & > .sub-bgimg1 {
+          background: url('/img/main/마스크 그룹 2.svg') no-repeat center top;
+        }
+        & > .sub-bgimg2 {
+          background: url('/img/main/마스크 그룹 3.svg') no-repeat center top;
+        }
+        & > .sub-bgimg3 {
+          background: url('/img/main/마스크 그룹 4.svg') no-repeat center top;
+        }
+      }
+    }
+  }
+
+  &-menu {
+    max-width: $maxWidth;
+    margin: $marginCenter;
+    margin-top: -180px;
+    @media screen and (max-width: 768px) {
+      margin-top: 0px;
+    }
+    &-ul {
+      @include flex-form(center, center, nowrap);
+      height: 180px;
+      @media screen and (max-width: 768px) {
+        height: auto;
+        flex-wrap: wrap;
+      }
+      & > .main-menu-li {
+        width: 25%;
+        text-align: center;
+        color: $WHITE_COLOR;
+        @media screen and (max-width: 768px) {
+          width: 50%;
+        }
+        &:nth-child(1) > .main-menu-div {
+          background-color: rgba(58, 69, 76, 0.9);
+        }
+        &:nth-child(1) > .main-menu-hover-div {
+          background-color: rgb(58, 69, 76);
+        }
+        &:nth-child(2) > .main-menu-div {
+          background-color: rgba(0, 165, 229, 0.9);
+        }
+        &:nth-child(2) > .main-menu-hover-div {
+          background-color: rgb(0, 165, 229);
+        }
+        &:nth-child(3) > .main-menu-div {
+          background-color: rgba(170, 188, 0, 0.9);
+        }
+        &:nth-child(3) > .main-menu-hover-div {
+          background-color: #aabc00;
+        }
+        &:nth-child(4) > .main-menu-div {
+          background-color: rgba(210, 68, 139, 0.9);
+        }
+        &:nth-child(4) > .main-menu-hover-div {
+          background-color: #d2448b;
+        }
+        @media (hover: hover) {
+          &:hover > .main-menu-div {
+            display: none;
+          }
+          &:hover > .main-menu-hover-div {
+            display: block;
+          }
+        }
+
+        & > .main-menu-div {
+          padding: 30px 0 20px;
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+          & > .main-menu-icon {
+            @include bg-form(inline-block, 50px, 50px, center, center);
+            &.main-menu-img1 {
+              background-image: url('/img/main/i4.svg');
+            }
+            &.main-menu-img2 {
+              background-image: url('/img/main/i1.svg');
+            }
+            &.main-menu-img3 {
+              background-image: url('/img/main/i2.svg');
+            }
+            &.main-menu-img4 {
+              background-image: url('/img/main/i3.svg');
+            }
+          }
+          & > .main-menu-ko-txt {
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: 600;
+          }
+          & > .main-menu-eng-txt {
+            font-style: italic;
+            font-weight: 500;
+          }
+        }
+        & > .main-menu-hover-div {
+          display: none;
+          z-index: 1;
+          padding: 30px;
+          @media screen and (max-width: 768px) {
+            display: block;
+            padding: 50px 10px 30px;
+          }
+          & > .menu-hover-txt {
+            @include flex-form(space-between, center, nowrap);
+
+            margin-bottom: 15px;
+            & > div > .menu-hover-eng-txt {
+              font-size: 16px;
+              text-align: start;
+              font-style: italic;
+              color: #f1f51e;
+            }
+            & > div > .menu-hover-ko-txt {
+              font-size: 24px;
+              font-weight: 600;
+              margin-top: 20px;
+              text-align: left;
+            }
+
+            & > .menu-hover-num-img {
+              @include bg-form(block, 75px, 60px, center, center);
+              &.num-img1 {
+                background-image: url('/img/main/01.png');
+              }
+              &.num-img2 {
+                background-image: url('/img/main/02.png');
+              }
+              &.num-img3 {
+                background-image: url('/img/main/03.png');
+              }
+              &.num-img4 {
+                background-image: url('/img/main/04.png');
+              }
+            }
+          }
+          & > .mobile-menu-hover-txt {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+          }
+          & > .menu-hover-ul {
+            display: flex;
+            flex-wrap: wrap;
+            & > .menu-hover-li {
+              width: calc(50% - 10px);
+              height: 140px;
+              margin: 5px;
+              @media screen and (max-width: 768px) {
+                width: 100%;
+                height: 100%;
+              }
+              & > .menu-hover-a {
+                display: block;
+                height: 100%;
+                padding: 15px 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+
+                @media (hover: hover) {
+                  &:hover {
+                    box-shadow: 0 0 0 2px #fff inset;
+                  }
+                }
+                & > .menu-hover-sub-img {
+                  @include bg-form(block, 60px, 60px, center, center);
+                  margin: 0 auto 15px;
+                  &.sub-img1-1 {
+                    background-image: url('/img/main/i4-1.svg');
+                  }
+                  &.sub-img1-2 {
+                    background-image: url('/img/main/i4-3.svg');
+                  }
+                  &.sub-img1-3 {
+                    background-image: url('/img/main/i4-2.svg');
+                  }
+                  &.sub-img1-4 {
+                    background-image: url('/img/main/i4-4.svg');
+                  }
+                  &.sub-img2-1 {
+                    background-image: url('/img/main/i1-1.svg');
+                  }
+                  &.sub-img2-2 {
+                    background-image: url('/img/main/i1-2.svg');
+                  }
+                  &.sub-img2-3 {
+                    background-image: url('/img/main/i1-3.svg');
+                  }
+                  &.sub-img2-4 {
+                    background-image: url('/img/main/i1-4.svg');
+                  }
+                  &.sub-img3-1 {
+                    background-image: url('/img/main/i2-1.svg');
+                  }
+                  &.sub-img3-2 {
+                    background-image: url('/img/main/i2-2.svg');
+                  }
+                  &.sub-img3-3 {
+                    background-image: url('/img/main/i2-3.svg');
+                  }
+                  &.sub-img3-4 {
+                    background-image: url('/img/main/i2-4.svg');
+                  }
+                  &.sub-img4-1 {
+                    background-image: url('/img/main/i3-1.svg');
+                  }
+                  &.sub-img4-2 {
+                    background-image: url('/img/main/i3-2.svg');
+                  }
+                  &.sub-img4-3 {
+                    background-image: url('/img/main/i3-3.svg');
+                  }
+                  &.sub-img4-4 {
+                    background-image: url('/img/main/i3-4.svg');
+                  }
+                  @media screen and (max-width: 768px) {
+                    display: none;
+                  }
+                }
+                & > .menu-hover-sub-txt {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-pg {
+    background-color: #f4f4f4;
+    padding: 80px 0 50px;
+    text-align: center;
+    &-title {
+      font-size: 30px;
+      font-weight: 600;
+      @media screen and (max-width: 768px) {
+        font-size: 24px;
+      }
+    }
+    &-sub-title {
+      color: #777777;
+      margin: 20px 0 50px;
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+    &-menu-ul {
+      @include flex-form(center, center, wrap);
+      & > li {
+        // flex: 1;
+        width: 94px;
+        margin: 5px;
+        @media screen and (max-width: 768px) {
+          width: 30%;
+        }
+        & > button {
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+          background-color: #e1e1e1;
+          color: #777777;
+          &.active {
+            background-color: $SKY_COLOR;
+            color: $WHITE_COLOR;
+          }
+        }
+      }
+    }
+    &-content-ul {
+      @include flex-form(flex-start, flex-start, wrap);
+      max-width: $maxWidth;
+      margin: 40px auto 10px;
+      padding: 0 5px;
+      @media screen and (max-width: 768px) {
+        justify-content: center;
+      }
+      & > li {
+        width: 300px;
+        height: 304px;
+        background-color: $WHITE_COLOR;
+        margin: 10px;
+        padding: 40px 30px;
+        & > div.main-pg-content-header {
+          @include flex-form(space-between, center, nowrap);
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #ddd;
+          & > .main-pg-content-title {
+            & > i {
+              background-image: url('https://cdn-icons-png.flaticon.com/512/13/13595.png');
+              @include bg-form(inline-flex, 20px, 20px, center, center);
+            }
+            & > span {
+              display: inline-block;
+              vertical-align: middle;
+              margin: 6px 0 0 5px;
+              font-size: 18px;
+              font-weight: 600;
+            }
+          }
+          & > .main-pg-content-d-day {
+            width: 55px;
+            height: 55px;
+            line-height: 55px;
+            color: $WHITE_COLOR;
+            border-radius: 55px;
+            background-color: #aabc00;
+            font-size: 16px;
+          }
+        }
+        & > div.main-pg-content-contents {
+          text-align: start;
+          & > .main-pg-content-tag {
+            font-size: 15px;
+            color: #777;
+            margin: 20px 0 40px;
+          }
+          & > span {
+            color: #777;
+            font-size: 15px;
+          }
+          & > .main-pg-content-period {
+            padding-right: 5px;
+          }
+          & > .main-pg-content-period::after {
+            position: absolute;
+            background-color: #777;
+            width: 1px;
+            height: 15px;
+            right: 0;
+            content: '';
+          }
+          & > .main-pg-content-day {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    &-page {
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: $marginCenter;
+      border-radius: 20px;
+      background-color: #00a5e5;
+    }
+    &-more {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 50px 0 20px;
+      padding: 5px;
+      border-bottom: 1px solid #000;
+      @media (hover: hover) {
+        &:hover {
+          color: $SKY_COLOR;
+          border-color: $SKY_COLOR;
+        }
+      }
+    }
+  }
+}

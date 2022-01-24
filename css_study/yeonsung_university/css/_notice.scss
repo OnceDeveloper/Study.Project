@@ -1,0 +1,256 @@
+.notice {
+  max-width: $maxWidth;
+  margin: $marginCenter;
+  padding: 50px 15px 80px;
+  @include flex-form(space-between, center, wrap);
+  @media screen and (max-width: 768px) {
+    padding: 50px 15px;
+  }
+  & > div {
+    width: calc(640px - 20px);
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+  &-contents {
+    padding: 0 20px 20px 0;
+    @media screen and (max-width: 768px) {
+      padding: 0 0 30px 0;
+    }
+    &-header {
+      @include flex-form(flex-start, center, nowrap);
+      border-bottom: 2px solid #000;
+      padding-bottom: 30px;
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+      &-title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-right: 20px;
+        @media screen and (max-width: 768px) {
+          margin-bottom: 30px;
+          font-size: 24px;
+        }
+      }
+      &-categories {
+        @include flex-form(space-between, center, nowrap);
+        @media screen and (max-width: 768px) {
+          justify-content: flex-start;
+        }
+        & > li > .notice-contents-header-category {
+          font-size: 24px;
+          font-weight: 600;
+          color: #aaa;
+          padding-bottom: 5px;
+          &.active {
+            color: $SKY_COLOR;
+            border-bottom: 1px solid $SKY_COLOR;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &-ul {
+      & > li {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+        & a {
+          @include ellipsis-form(80%);
+        }
+        &:not(:first-child) {
+          @include flex-form(space-between, center, nowrap);
+        }
+        & > .notice-contents-first {
+          @include flex-form(flex-start, center, nowrap);
+
+          & > .notice-contents-first-date {
+            padding: 10px;
+            border: 5px solid #ececec;
+            margin-right: 30px;
+            & > .notice-contents-d {
+              text-align: center;
+              font-size: 30px;
+              font-weight: 600;
+              color: $SKY_COLOR;
+              margin-bottom: 10px;
+            }
+            & > .notice-contents-ym {
+              font-size: 18px;
+              color: #777;
+            }
+          }
+          & > .notice-contents-first-letter {
+            font-size: 20px;
+            @media screen and (max-width: 768px) {
+              font-size: 14px;
+            }
+          }
+        }
+        & > .notice-contents-letter {
+          vertical-align: middle;
+          font-size: 18px;
+          &::before {
+            display: inline-block;
+            vertical-align: middle;
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $SKY_COLOR;
+            margin-right: 5px;
+          }
+        }
+        & > .notice-contents-date {
+          margin-left: 10px;
+          font-size: 18px;
+          color: #aaa;
+        }
+      }
+    }
+  }
+  &-form {
+    @include flex-form(flex-start, flex-start, nowrap);
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    &-shcuts {
+      margin-right: 20px;
+      @media screen and (max-width: 768px) {
+        margin: 0;
+      }
+      &-ul {
+        @media screen and (max-width: 768px) {
+          display: flex;
+        }
+        & > li {
+          @include bg-form(block, 100%, 100%, center, center);
+          width: 290px;
+          height: 165px;
+          margin-bottom: 10px;
+          padding: 30px;
+          color: $WHITE_COLOR;
+          @media screen and (max-width: 768px) {
+            width: 50%;
+            height: auto;
+            text-align: center;
+            background-image: none !important;
+          }
+          &:first-child {
+            background-color: #5ccb9c;
+            background-image: url('/img/main/banner_bg01.svg');
+            & > a > .notice-form-shcuts-link {
+              background-color: #478f71;
+            }
+          }
+          &:last-child {
+            background-color: #5c9fcb;
+            background-image: url('/img/main/banner_bg02.svg');
+            & > a > .notice-form-shcuts-link {
+              background-color: #507197;
+            }
+          }
+          & > a.notice-form-shcuts-container {
+            & > .notice-form-shcuts-title {
+              display: block;
+              font-size: 24px;
+              font-weight: 600;
+            }
+            & > .notice-form-shcuts-contents {
+              display: block;
+              font-weight: 300;
+              margin: 10px 0 20px;
+            }
+            & > .notice-form-shcuts-link {
+              display: inline-block;
+              font-size: 14px;
+              padding: 10px 12px;
+              border-radius: 16px;
+            }
+          }
+        }
+      }
+    }
+    &-doc {
+      width: 100%;
+      &-ul {
+        @media screen and (max-width: 768px) {
+          @include flex-form(space-between, center, nowrap);
+        }
+        & > li {
+          width: 290px;
+          height: 113px;
+          border: 1px solid #aaa;
+          &:not(:last-child) {
+            border-bottom: 0;
+          }
+          @media screen and (max-width: 768px) {
+            width: 33%;
+            height: auto;
+            border: 0;
+            &:not(:last-child) {
+              border-right: 1px solid #aaa;
+            }
+          }
+
+          @media (hover: hover) {
+            &:hover
+              > .notice-form-doc-container
+              > .notice-form-doc-img-container
+              > .notice-form-doc-img {
+              top: 30%;
+            }
+          }
+          & > .notice-form-doc-container {
+            @include flex-form(space-between, center, nowrap);
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            @media screen and (max-width: 768px) {
+              display: block;
+              padding: 10px;
+            }
+            & > .notice-form-doc-img-container {
+              display: inline-block;
+              width: 70px;
+              height: 70px;
+              background-color: #ddd;
+              border-radius: 50%;
+              & > .notice-form-doc-img {
+                @include bg-form(inline-block, 50px, 50px, center, center);
+                @include bg-absol-center-form;
+                transition: top 0.4s;
+                &.doc-img1 {
+                  background-image: url('/img/main/icon_img01.svg');
+                }
+                &.doc-img2 {
+                  background-image: url('/img/main/icon_img02.svg');
+                }
+                &.doc-img3 {
+                  background-image: url('/img/main/icon_img03.svg');
+                }
+              }
+            }
+            & > .notice-form-doc-txt {
+              font-size: 18px;
+              font-weight: 600;
+              @media screen and (max-width: 768px) {
+                display: block;
+                font-size: 16px;
+              }
+            }
+            & > .notice-form-doc-save {
+              @include bg-form(inline-block, 20px, 20px, center, center);
+              background-image: url('/img/main/icon_download.svg');
+              @media screen and (max-width: 768px) {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

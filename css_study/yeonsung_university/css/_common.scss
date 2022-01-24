@@ -1,0 +1,69 @@
+$maxWidth: 1280px;
+$marginCenter: 0 auto;
+
+$WHITE_COLOR: #fff;
+$SKY_COLOR: #00a5e5;
+
+.pc {
+  display: block;
+}
+.mobile {
+  display: none;
+}
+.blind {
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background-color: #aaa;
+}
+@mixin flex-form($content, $align, $wrap) {
+  display: flex;
+  justify-content: $content;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin bg-form($display, $w, $h, $x, $y) {
+  display: $display;
+  width: $w;
+  height: $h;
+  background-position: $x, $y;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+@mixin bg-absol-center-form {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin ellipsis-form($w) {
+  width: $w;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+}

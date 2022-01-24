@@ -601,6 +601,7 @@ img {
   .notice-nav-div:hover {
     background-color: #e5e5e5;
     border-color: #002e6d;
+    cursor: pointer;
   }
   .notice-nav-div:hover > .notice-nav-back-a {
     background-image: url('../img/2020/ba.svg');

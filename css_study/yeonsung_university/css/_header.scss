@@ -1,0 +1,113 @@
+.header {
+  &-top {
+    background-color: #3e7090;
+    &-menu {
+      display: flex;
+      max-width: $maxWidth;
+      justify-content: end;
+      align-items: center;
+      margin: $marginCenter;
+      & > li {
+        border-left: 1px solid #6798b6;
+        &:nth-child(n + 4) {
+          background-color: $SKY_COLOR;
+        }
+        & > a {
+          display: block;
+          padding: 10px;
+          color: $WHITE_COLOR;
+        }
+      }
+    }
+  }
+  &-nav {
+    display: flex;
+    max-width: $maxWidth;
+    margin: $marginCenter;
+    padding: 20px 0;
+    justify-content: space-between;
+    &-logo {
+      display: flex;
+      & > a {
+        display: block;
+        width: 160px;
+        height: 40px;
+        margin: 0 20px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        &:first-child {
+          background-image: url('/img/main/header_logo.svg');
+          &::after {
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 35px;
+            content: '';
+            background-color: #e5e5e5;
+            cursor: auto;
+          }
+        }
+        &:last-child {
+          background-image: url('/img/main/header_title.png');
+        }
+      }
+    }
+    &-menu {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      & > li {
+        padding: 0 20px;
+        & > a {
+          font-size: 18px;
+          font-weight: 500;
+        }
+        &:last-child > a {
+          display: block;
+          width: 60px;
+          height: 40px;
+          background-image: url('/img/main/iocn_login.png');
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+  & > .mobile {
+    height: 100px;
+    & > .mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #2f5a75;
+
+      & > .mobile-header-logo {
+        & > a:first-child {
+          @include bg-form(block, 110px, 24px, center, center);
+          background-image: url('/img/main/그룹 461.svg');
+          margin-bottom: 5px;
+        }
+        & > a:last-child {
+          @include bg-form(inline-block, 95px, 34px, center, center);
+          background-image: url('/img/main/그룹 487.svg');
+        }
+      }
+      & > .mobile-header-icon {
+        & > a {
+          @include bg-form(inline-block, 22px, 22px, center, center);
+          vertical-align: middle;
+        }
+        & > a:first-child {
+          background-image: url('https://carry.yeonsung.ac.kr/img/2021/home_white.svg');
+          margin-right: 10px;
+        }
+        & > a:last-child {
+          background-image: url('/img//main/mb-login.svg');
+        }
+      }
+    }
+  }
+}
