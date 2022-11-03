@@ -19,16 +19,21 @@ const SubContainer = styled.div`
 function App() {
   const [todolist, setTodolist] = useState([
     { id: 0, value: '공부하기' },
-    { id: 1, value: '수영하기' },
+    { id: 1, value: '수영하기' }
   ]);
+    const [test, setTest] = useState([
+        { id: 0, value: '테스트1' },
+        { id: 1, value: '테스트2' }
+    ]);
 
   //추가
   const addTodo = value => {
-    let isHaved = false;
-    for (let i = 0; i < todolist.length; i++) {
-      if (todolist[i].value === value) {
-        isHaved = true;
-        break;
+      let isHaved = false;
+      
+      for (let i = 0; i < todolist.length; i++) {
+        if (todolist[i].value === value) {
+            isHaved = true;
+            break;
       }
     }
     if (!isHaved) {
@@ -39,17 +44,29 @@ function App() {
     } else alert('이미 있는 항목입니다.');
   };
 
-  //수정
-  const editTodo = todoParam => {
-    setTodolist(prevState => {
-      const changeTodo = prevState.map(todo => {
-        if (todo.id === todoParam.id)
-          return { ...todo, value: todoParam.value };
-        return todo;
-      });
-      return changeTodo;
-    });
-  };
+    //수정
+    //setTodolist prevState 인수 사용 X version
+    //const editTodo = todoParam => {
+    //     const changeTodo = todolist.map((todo, idx) => {
+    //        if (todo.id === todoParam.id) {
+    //            return { ...todo, value: todoParam.value }
+    //        }
+    //        return todo;
+    //    })
+    //    setTodolist(changeTodo);
+    //};
+
+      //setTodolist prevState 인수 사용 version
+      const editTodo = todoParam => {
+        setTodolist(prevState => {
+          const changeTodo = prevState.map(todo => {
+            if (todo.id === todoParam.id)
+              return { ...todo, value: todoParam.value };
+            return todo;
+          });
+          return changeTodo;
+        });
+      };
 
   //삭제
   const delTodo = id => {
